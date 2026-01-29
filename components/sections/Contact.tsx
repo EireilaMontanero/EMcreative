@@ -20,8 +20,8 @@ export default function Contact() {
                     className="bg-white/40 backdrop-blur-xl border border-white/60 p-8 md:p-16 rounded-[3rem] shadow-2xl"
                 >
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-6xl font-serif text-white mb-6 drop-shadow-sm">Conectemos.</h2>
-                        <p className="text-gray-300 text-lg max-w-md mx-auto">
+                        <h2 className="text-4xl md:text-6xl font-serif text-gray-900 mb-6 drop-shadow-sm">Conectemos.</h2>
+                        <p className="text-gray-700 text-lg max-w-md mx-auto">
                             ¿Hablamos sobre tu próximo proyecto? Encuéntrame en mis redes o envíame un mensaje.
                         </p>
                     </div>

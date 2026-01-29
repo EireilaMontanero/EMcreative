@@ -23,7 +23,7 @@ export default function Home() {
           playsInline
           className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
         >
-          <source src="/assets/fondovideo.mp4" type="video/mp4" />
+          <source src={process.env.NODE_ENV === 'production' ? '/EMcreative/assets/fondovideo.mp4' : '/assets/fondovideo.mp4'} type="video/mp4" />
         </video>
 
         {/* Hero Content */}

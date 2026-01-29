@@ -13,23 +13,23 @@ export default function About() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="bg-white/30 backdrop-blur-md border border-white/40 p-10 md:p-14 rounded-[2rem] shadow-xl"
+                        className="bg-white/70 backdrop-blur-xl border border-white/60 p-10 md:p-14 rounded-[2rem] shadow-xl"
                     >
-                        <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 drop-shadow-sm">
+                        <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 drop-shadow-sm">
                             Sobre mí.
                         </h2>
-                        <div className="text-gray-100 font-medium leading-relaxed space-y-6">
+                        <div className="text-gray-800 font-medium leading-relaxed space-y-6">
                             <p className="text-lg">
-                                Soy <span className="text-white font-bold">Eireila Montanero</span>. Mi misión es simple: crear experiencias digitales que no solo funcionen, sino que <span className="italic font-serif text-white">se sientan</span>.
+                                Soy <span className="text-black font-bold">Eireila Montanero</span>. Mi misión es simple: crear experiencias digitales que no solo funcionen, sino que <span className="italic font-serif text-black">se sientan</span>.
                             </p>
-                            <p className="font-light text-gray-300">
+                            <p className="font-light text-gray-700">
                                 Combino la lógica de la programación con la intuición del arte. Utilizo tu visión como materia prima para construir sitios web que reflejan la verdadera esencia de tu marca.
                             </p>
                         </div>
 
                         <div className="mt-8 flex gap-3 flex-wrap">
                             {['Diseño Web', 'Estrategia', 'Branding'].map(tag => (
-                                <span key={tag} className="px-3 py-1 bg-white/20 border border-white/30 rounded-full text-xs font-bold tracking-widest uppercase text-white">
+                                <span key={tag} className="px-3 py-1 bg-white/60 border border-black/5 rounded-full text-xs font-bold tracking-widest uppercase text-gray-900 hover:bg-white hover:shadow-md transition-all">
                                     {tag}
                                 </span>
                             ))}
