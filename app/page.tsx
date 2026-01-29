@@ -2,6 +2,8 @@ import Navbar from '@/components/ui/Navbar'
 import About from '@/components/sections/About'
 import Services from '@/components/sections/Services'
 import Contact from '@/components/sections/Contact'
+import SkillsMarquee from '@/components/sections/SkillsMarquee'
+import Process from '@/components/sections/Process'
 import Image from 'next/image'
 import { getAssetPath } from '@/lib/utils'
 
@@ -53,8 +55,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Content Sections */}
+      {/* New Professional Sections */}
+      <SkillsMarquee />
       <About />
+      <Process />
+
+      {/* Existing Sections */}
       <Services />
       <Contact />
 
