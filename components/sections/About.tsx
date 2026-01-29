@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { getAssetPath } from '@/lib/utils'
 
 export default function About() {
     return (
@@ -44,7 +45,7 @@ export default function About() {
                         className="relative h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/20"
                     >
                         <Image
-                            src="/assets/eireila.png"
+                            src={getAssetPath('/assets/eireila.png')}
                             alt="Eireila Montanero"
                             width={600}
                             height={800}

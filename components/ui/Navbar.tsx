@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { Instagram, Linkedin, ExternalLink, Phone } from 'lucide-react'
+import { getAssetPath } from '@/lib/utils'
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false)
@@ -35,7 +36,7 @@ export default function Navbar() {
                 {/* Logo Icon */}
                 <Link href="#home" className="relative block h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-full border border-white/50 shadow-sm hover:scale-110 transition-transform">
                     <Image
-                        src="/assets/logo.png"
+                        src={getAssetPath('/assets/logo.png')}
                         alt="Logo"
                         width={48}
                         height={48}

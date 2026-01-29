@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -31,7 +32,7 @@ export default function RootLayout({
         {/* Global Blurred Background (User's Banner) */}
         <div className="fixed inset-0 min-h-screen w-full -z-50 overflow-hidden">
           <Image
-            src="/assets/banner.png"
+            src={getAssetPath('/assets/banner.png')}
             alt="Background Palette"
             fill
             sizes="100vw"

@@ -3,6 +3,7 @@ import About from '@/components/sections/About'
 import Services from '@/components/sections/Services'
 import Contact from '@/components/sections/Contact'
 import Image from 'next/image'
+import { getAssetPath } from '@/lib/utils'
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
           playsInline
           className="absolute z-0 w-auto min-w-full min-h-full max-w-none object-cover"
         >
-          <source src={process.env.NODE_ENV === 'production' ? '/EMcreative/assets/fondovideo.mp4' : '/assets/fondovideo.mp4'} type="video/mp4" />
+          <source src={getAssetPath('/assets/fondovideo.mp4')} type="video/mp4" />
         </video>
 
         {/* Hero Content */}
@@ -32,7 +33,7 @@ export default function Home() {
           <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-full mb-10 shadow-2xl animate-fade-in-up">
             <div className="relative flex items-center justify-center">
               <Image
-                src="/assets/logo.png"
+                src={getAssetPath('/assets/logo.png')}
                 alt="Eireila Logo"
                 width={200}
                 height={200}
