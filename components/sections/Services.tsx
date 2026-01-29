@@ -4,18 +4,18 @@ import { Monitor, PenTool, Layout } from 'lucide-react'
 
 const services = [
     {
-        title: "Diseño Web",
-        description: "Creación de sitios web únicos, diseñados a medida para capturar la identidad de tu marca.",
+        title: "Páginas con Alma",
+        description: "Diseño sitios web que no solo son bonitos, sino que capturan la identidad real de tu marca.",
         icon: <Layout className="w-8 h-8 text-black" />,
     },
     {
-        title: "Desarrollo",
-        description: "Código limpio y optimizado. Sitios rápidos, seguros y adaptables a cualquier dispositivo.",
+        title: "Desarrollo a Medida",
+        description: "Transformo tus ideas en realidad con código limpio, rápido y optimizado para cualquier pantalla.",
         icon: <Monitor className="w-8 h-8 text-black" />,
     },
     {
-        title: "Identidad Visual",
-        description: "Coherencia estética. Me aseguro de que cada píxel combine con tu logo y tus colores.",
+        title: "Branding Visual",
+        description: "Logos y colores que cuentan tu historia. Me aseguro de que todo se vea profesional y coherente.",
         icon: <PenTool className="w-8 h-8 text-black" />,
     }
 ]

@@ -5,20 +5,20 @@ import { Search, PenTool, Rocket } from 'lucide-react'
 const steps = [
     {
         id: '01',
-        title: 'Descubrimiento',
-        desc: 'Analizo tu marca, tu audiencia y tus objetivos. No escribo una sola línea de código sin entender el "por qué".',
+        title: 'Nos Conocemos',
+        desc: 'Primero hablamos. Necesito entender qué tienes en mente, quién es tu público y qué quieres lograr.',
         icon: <Search className="w-8 h-8" />
     },
     {
         id: '02',
-        title: 'Diseño & Estrategia',
-        desc: 'Creo prototipos visuales y defino la arquitectura. Aquí es donde la estética se encuentra con la funcionalidad.',
+        title: 'Diseño y Plan',
+        desc: 'Aquí es donde la idea toma forma. Defino el estilo visual y la estructura para que todo fluya perfecto.',
         icon: <PenTool className="w-8 h-8" />
     },
     {
         id: '03',
-        title: 'Desarrollo & Lanzamiento',
-        desc: 'Construyo la web con código limpio y optimizado. Pruebas rigurosas y... ¡al aire!',
+        title: 'Creación y Entrega',
+        desc: 'Construyo la web con las mejores herramientas. Me aseguro de que todo funcione de maravilla antes del estreno.',
         icon: <Rocket className="w-8 h-8" />
     }
 ]

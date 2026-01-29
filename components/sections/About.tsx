@@ -17,14 +17,14 @@ export default function About() {
                         className="bg-white/70 backdrop-blur-xl border border-white/60 p-10 md:p-14 rounded-[2rem] shadow-xl"
                     >
                         <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 drop-shadow-sm">
-                            Sobre mí.
+                            Un poco sobre mí.
                         </h2>
                         <div className="text-gray-800 font-medium leading-relaxed space-y-6">
                             <p className="text-lg">
-                                Soy <span className="text-black font-bold">Eireila Montanero</span>. Mi misión es simple: crear experiencias digitales que no solo funcionen, sino que <span className="italic font-serif text-black">se sientan</span>.
+                                Hola, soy <span className="text-black font-bold">Eireila</span>. Mi enfoque es sencillo: no solo busco que tu web se vea increíble, sino que realmente <span className="italic font-serif text-black">transmita</span> lo que eres.
                             </p>
                             <p className="font-light text-gray-700">
-                                Combino la lógica de la programación con la intuición del arte. Utilizo tu visión como materia prima para construir sitios web que reflejan la verdadera esencia de tu marca.
+                                Mezclo la precisión técnica con mi lado más creativo. Para mí, cada proyecto es una oportunidad de convertir tu visión en una experiencia digital única, cuidando cada detalle para que tu marca destaque como se merece.
                             </p>
                         </div>
 
