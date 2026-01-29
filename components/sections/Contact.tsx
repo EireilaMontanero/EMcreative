@@ -20,9 +20,9 @@ export default function Contact() {
                     className="bg-white/40 backdrop-blur-xl border border-white/60 p-8 md:p-16 rounded-[3rem] shadow-2xl"
                 >
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-6xl font-serif text-gray-900 mb-6 drop-shadow-sm">Conectemos.</h2>
+                        <h2 className="text-4xl md:text-6xl font-serif text-gray-900 mb-6 drop-shadow-sm">Contacto Profesional.</h2>
                         <p className="text-gray-700 text-lg max-w-md mx-auto">
-                            ¿Hablamos sobre tu próximo proyecto? Encuéntrame en mis redes o envíame un mensaje.
+                            Estoy disponible para colaboraciones y nuevos proyectos. Envíame un mensaje directo.
                         </p>
                     </div>
 
@@ -43,13 +43,35 @@ export default function Contact() {
                     </div>
 
                     <div className="border-t border-black/5 pt-16">
-                        <form className="space-y-4 text-left max-w-md mx-auto">
-                            <input type="text" placeholder="NOMBRE" className="w-full bg-white/60 border-none p-4 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-black/10 transition-all font-bold text-xs tracking-widest uppercase" />
-                            <input type="email" placeholder="EMAIL" className="w-full bg-white/60 border-none p-4 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-black/10 transition-all font-bold text-xs tracking-widest uppercase" />
-                            <textarea rows={4} placeholder="MENSAJE" className="w-full bg-white/60 border-none p-4 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-black/10 transition-all font-bold text-xs tracking-widest uppercase resize-none" />
+                        {/* 
+                            NOTA PARA EIREILA: 
+                            Para que este formulario envíe los correos a TU email:
+                            1. Ve a https://formspree.io/register y crea una cuenta gratis.
+                            2. Crea un "New Form" y copia el "Endpoint URL" que te den.
+                            3. Pega ese URL en donde dice action="https://formspree.io/f/TU_CODIGO_AQUI" abajo.
+                        */}
+                        <form
+                            action="https://formspree.io/f/mqazqozg" // <--- CAMBIA ESTO POR TU URL DE FORMSPREE
+                            method="POST"
+                            className="space-y-4 text-left max-w-md mx-auto"
+                        >
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                                placeholder="TU EMAIL EMPRESARIAL"
+                                className="w-full bg-white/60 border-none p-4 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-black/10 transition-all font-bold text-xs tracking-widest uppercase"
+                            />
+                            <textarea
+                                name="message"
+                                required
+                                rows={4}
+                                placeholder="DETALLES DEL PROYECTO"
+                                className="w-full bg-white/60 border-none p-4 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-black/10 transition-all font-bold text-xs tracking-widest uppercase resize-none"
+                            />
 
-                            <button className="w-full bg-black text-white py-4 rounded-xl font-bold tracking-[0.2em] hover:bg-gray-800 transition-colors uppercase shadow-lg">
-                                Enviar Mensaje
+                            <button type="submit" className="w-full bg-black text-white py-4 rounded-xl font-bold tracking-[0.2em] hover:bg-gray-800 transition-colors uppercase shadow-lg">
+                                Enviar Solicitud
                             </button>
                         </form>
                     </div>

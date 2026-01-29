@@ -14,8 +14,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Eireila | Aesthetic Web & Design",
-  description: "Portafolio de Eireila Montanero.",
+  title: "Eireila | Desarrollo Web & Diseño",
+  description: "Portafolio profesional de Eireila Montanero.",
 };
 
 export default function RootLayout({
