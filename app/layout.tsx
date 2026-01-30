@@ -36,11 +36,12 @@ export default function RootLayout({
             alt="Background Palette"
             fill
             sizes="100vw"
-            className="object-cover blur-[80px] opacity-60 scale-110" // Heated blur for color wash
+            className="object-cover blur-[100px] opacity-40 scale-125 transition-all duration-1000" // More wash, more scale for movement
             priority
           />
-          {/* Noise Texture Overlay for Aesthetic Feel */}
-          <div className="absolute inset-0 bg-white/20 mix-blend-overlay"></div>
+          {/* Premium Noise / Grain Texture Overlay */}
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.15] brightness-50 contrast-150 mix-blend-overlay pointer-events-none"></div>
+          <div className="absolute inset-0 bg-white/10 mix-blend-soft-light pointer-events-none"></div>
         </div>
 
         {children}
