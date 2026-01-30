@@ -77,7 +77,7 @@ export default function ServicesPage() {
                             Me adapto a tu presupuesto. Podemos concordar la forma de pago que mejor te funcione; cuento con múltiples opciones para facilitar el inicio de nuestro trabajo juntos.
                         </p>
                         <a
-                            href="https://wa.me/584264255154"
+                            href="https://wa.me/584264255154?text=Hola,%20vengo%20de%20tu%20pagina%20web"
                             target="_blank"
                             className="bg-white text-stone-900 px-10 py-4 rounded-2xl font-bold tracking-widest uppercase hover:bg-stone-200 transition-all active:scale-95"
                         >

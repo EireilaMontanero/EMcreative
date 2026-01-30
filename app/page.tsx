@@ -52,11 +52,11 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-9xl font-serif font-bold text-white tracking-tighter drop-shadow-2xl mb-6 scale-90 md:scale-100 uppercase">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white tracking-tighter drop-shadow-2xl mb-4 scale-95 md:scale-100 uppercase">
             {t.hero.title}
           </h1>
 
-          <p className="text-lg md:text-2xl text-white/95 font-medium max-w-xl mx-auto tracking-wide drop-shadow-md bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-white/10 uppercase">
+          <p className="text-sm md:text-lg text-white/95 font-medium max-w-lg mx-auto tracking-wide drop-shadow-md bg-black/40 backdrop-blur-md p-4 rounded-xl border border-white/10 uppercase">
             {t.hero.subtitle}
           </p>
         </div>

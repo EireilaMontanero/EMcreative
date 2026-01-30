@@ -81,7 +81,7 @@ export default function Contact() {
                             className="pt-6"
                         >
                             <a
-                                href="https://wa.me/584264255154"
+                                href="https://wa.me/584264255154?text=Hola,%20vengo%20de%20tu%20pagina%20web"
                                 target="_blank"
                                 className="block bg-[#25D366] text-white p-5 rounded-2xl text-center font-bold text-sm shadow-xl hover:bg-[#128C7E] active:scale-95 transition-all flex items-center justify-center gap-3 group"
                             >
