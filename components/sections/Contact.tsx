@@ -1,82 +1,109 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Instagram, Linkedin, ExternalLink, Phone } from 'lucide-react'
+import { MessageCircle, Send, CheckCheck, Phone } from 'lucide-react'
+import Image from 'next/image'
+import { getAssetPath } from '@/lib/utils'
 
 export default function Contact() {
-    const socialButtons = [
-        { name: 'Instagram', icon: <Instagram />, href: 'https://www.instagram.com/eireilys/', color: 'hover:bg-pink-500' },
-        { name: 'LinkedIn', icon: <Linkedin />, href: 'https://www.linkedin.com/in/eireila-montanero/', color: 'hover:bg-blue-600' },
-        { name: 'Fiverr', icon: <ExternalLink />, href: 'https://es.fiverr.com/eireila?public_mode=true', color: 'hover:bg-green-500 text-black' },
-        { name: 'WhatsApp', icon: <Phone />, href: 'https://wa.me/584264255154', color: 'hover:bg-green-400 text-black' },
-    ]
-
     return (
-        <section id="contact" className="py-32 mb-20 px-6">
+        <section id="contact" className="py-32 px-6 relative overflow-hidden">
             <div className="container mx-auto max-w-4xl">
 
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-4">¿Hablamos por WhatsApp?</h2>
+                    <p className="text-gray-600 max-w-md mx-auto italic font-medium">Respuesta inmediata y trato personalizado para tu proyecto.</p>
+                </div>
+
                 <motion.div
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    className="bg-white/40 backdrop-blur-xl border border-white/60 p-8 md:p-16 rounded-[3rem] shadow-2xl"
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    className="max-w-md mx-auto bg-[#E5DDD5] rounded-[2.5rem] shadow-2xl overflow-hidden border border-black/5"
                 >
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-6xl font-serif text-gray-900 mb-6 drop-shadow-sm">Contacto Profesional.</h2>
-                        <p className="text-gray-700 text-lg max-w-md mx-auto">
-                            Estoy disponible para colaboraciones y nuevos proyectos. Envíame un mensaje directo.
-                        </p>
+                    {/* WhatsApp Header */}
+                    <div className="bg-[#075E54] p-5 flex items-center gap-4 text-white">
+                        <div className="relative h-12 w-12 rounded-full overflow-hidden border border-white/20 bg-white/10">
+                            <Image
+                                src={getAssetPath('/assets/logo.png')}
+                                alt="Eireila"
+                                fill
+                                className="object-contain p-1.5"
+                            />
+                        </div>
+                        <div className="flex-1">
+                            <h3 className="font-bold text-sm tracking-tight text-white">Eireila Montanero</h3>
+                            <p className="text-[10px] opacity-90 flex items-center gap-1 font-medium">
+                                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
+                                en línea ahora
+                            </p>
+                        </div>
+                        <div className="flex gap-4 opacity-80">
+                            <Phone size={18} />
+                            <MessageCircle size={18} />
+                        </div>
                     </div>
 
-                    {/* Social Grid */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-                        {socialButtons.map((social) => (
-                            <a
-                                key={social.name}
-                                href={social.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`flex flex-col items-center justify-center gap-3 p-6 bg-white/50 border border-white/60 rounded-2xl transition-all duration-300 group ${social.color} hover:text-white hover:shadow-lg`}
-                            >
-                                <span className="group-hover:scale-110 transition-transform">{social.icon}</span>
-                                <span className="text-xs font-bold tracking-widest uppercase">{social.name}</span>
-                            </a>
-                        ))}
-                    </div>
+                    {/* Chat Area */}
+                    <div className="p-6 space-y-4 min-h-[350px] flex flex-col justify-end bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] bg-repeat bg-[length:400px]">
 
-                    <div className="border-t border-black/5 pt-16">
-                        {/* 
-                            NOTA PARA EIREILA: 
-                            Para que este formulario envíe los correos a TU email:
-                            1. Ve a https://formspree.io/register y crea una cuenta gratis.
-                            2. Crea un "New Form" y copia el "Endpoint URL" que te den.
-                            3. Pega ese URL en donde dice action="https://formspree.io/f/TU_CODIGO_AQUI" abajo.
-                        */}
-                        <form
-                            action="https://formspree.io/f/mqazqozg" // <--- CAMBIA ESTO POR TU URL DE FORMSPREE
-                            method="POST"
-                            className="space-y-4 text-left max-w-md mx-auto"
+                        {/* Received Message */}
+                        <motion.div
+                            initial={{ x: -20, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            transition={{ delay: 0.5 }}
+                            className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] relative border border-black/5"
                         >
-                            <input
-                                type="email"
-                                name="email"
-                                required
-                                placeholder="TU EMAIL EMPRESARIAL"
-                                className="w-full bg-white/60 border-none p-4 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-black/10 transition-all font-bold text-xs tracking-widest uppercase"
-                            />
-                            <textarea
-                                name="message"
-                                required
-                                rows={4}
-                                placeholder="DETALLES DEL PROYECTO"
-                                className="w-full bg-white/60 border-none p-4 rounded-xl text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-black/10 transition-all font-bold text-xs tracking-widest uppercase resize-none"
-                            />
+                            <p className="text-sm text-gray-800 leading-relaxed">
+                                ¡Hola! 👋 Soy Eireila. Me encantaría saber más sobre tu idea. ¿Qué tienes en mente para tu web?
+                            </p>
+                            <span className="text-[9px] text-gray-400 float-right mt-2 font-bold tracking-tighter">10:42 AM</span>
+                        </motion.div>
 
-                            <button type="submit" className="w-full bg-black text-white py-4 rounded-xl font-bold tracking-[0.2em] hover:bg-gray-800 transition-colors uppercase shadow-lg">
-                                Enviar Solicitud
-                            </button>
-                        </form>
+                        {/* Received Message 2 */}
+                        <motion.div
+                            initial={{ x: -20, opacity: 0 }}
+                            whileInView={{ x: 0, opacity: 1 }}
+                            transition={{ delay: 1.2 }}
+                            className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] border border-black/5"
+                        >
+                            <p className="text-sm text-gray-800 font-bold italic">
+                                Juntos podemos hacer que tu marca brille online. ✨
+                            </p>
+                            <span className="text-[9px] text-gray-400 float-right mt-2 font-bold tracking-tighter">10:42 AM</span>
+                        </motion.div>
+
+                        {/* Typing CTA */}
+                        <motion.div
+                            initial={{ y: 20, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 2 }}
+                            className="pt-6"
+                        >
+                            <a
+                                href="https://wa.me/584264255154"
+                                target="_blank"
+                                className="block bg-[#25D366] text-white p-5 rounded-2xl text-center font-bold text-sm shadow-xl hover:bg-[#128C7E] active:scale-95 transition-all flex items-center justify-center gap-3 group"
+                            >
+                                <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                ESCRIBIR POR WHATSAPP
+                            </a>
+                        </motion.div>
                     </div>
 
+                    {/* Bottom Bar Imitation */}
+                    <div className="bg-[#F0F2F5] p-4 flex gap-3 items-center">
+                        <div className="flex-1 bg-white rounded-full px-5 py-3 text-xs text-gray-400 border border-black/5 shadow-inner">
+                            Escribe un mensaje...
+                        </div>
+                        <div className="w-10 h-10 bg-[#128C7E] rounded-full flex items-center justify-center text-white shadow-md">
+                            <Send size={16} />
+                        </div>
+                    </div>
                 </motion.div>
+
+                <div className="mt-12 text-center opacity-70 flex items-center justify-center gap-2">
+                    <CheckCheck size={18} className="text-blue-500" />
+                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-900">Visto • Disponible hoy</p>
+                </div>
 
             </div>
         </section>
