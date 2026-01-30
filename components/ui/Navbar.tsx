@@ -46,13 +46,19 @@ export default function Navbar() {
                 </Link>
 
                 <div className="hidden md:flex gap-6">
-                    {['Inicio', 'Sobre Mí', 'Servicios', 'Contacto'].map((item) => (
+                    {[
+                        { name: 'Inicio', href: getAssetPath('/') + '#home' },
+                        { name: 'Sobre Mí', href: getAssetPath('/') + '#about' },
+                        { name: 'Servicios', href: getAssetPath('/servicios') },
+                        { name: 'Portafolio', href: getAssetPath('/portfolio') },
+                        { name: 'Contacto', href: getAssetPath('/') + '#contact' }
+                    ].map((item) => (
                         <Link
-                            key={item}
-                            href={`#${item === 'Inicio' ? 'home' : item === 'Sobre Mí' ? 'about' : item === 'Servicios' ? 'services' : 'contact'}`}
+                            key={item.name}
+                            href={item.href}
                             className={`text-xs font-bold tracking-[0.2em] uppercase hover:text-white transition-colors ${scrolled ? 'text-gray-800' : 'text-gray-200'}`}
                         >
-                            {item}
+                            {item.name}
                         </Link>
                     ))}
                 </div>
