@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { Instagram, Linkedin, ExternalLink, Mail } from 'lucide-react'
+import { getAssetPath } from '@/lib/utils'
 
 export default function Footer() {
     return (
@@ -20,13 +21,10 @@ export default function Footer() {
                     <div>
                         <h4 className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Navegación</h4>
                         <ul className="space-y-4">
-                            {['Inicio', 'Sobre Mí', 'Proceso', 'Servicios'].map((item) => (
-                                <li key={item}>
-                                    <Link href={`#${item.toLowerCase().replace(' ', '-')}`} className="text-sm text-gray-800 hover:text-black transition-colors">
-                                        {item}
-                                    </Link>
-                                </li>
-                            ))}
+                            <li><Link href="#home" className="text-sm text-gray-800 hover:text-black transition-colors">Inicio</Link></li>
+                            <li><Link href="#about" className="text-sm text-gray-800 hover:text-black transition-colors">Sobre Mí</Link></li>
+                            <li><Link href={getAssetPath('/servicios')} className="text-sm text-gray-800 hover:text-black transition-colors">Servicios</Link></li>
+                            <li><Link href={getAssetPath('/portfolio')} className="text-sm text-gray-800 hover:text-black transition-colors">Portafolio</Link></li>
                         </ul>
                     </div>
 
