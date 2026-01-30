@@ -92,7 +92,7 @@ export default function Navbar() {
                 </div>
 
                 <Link
-                    href="https://wa.me/584264255154"
+                    href="https://wa.me/584264255154?text=Hola,%20vengo%20de%20tu%20pagina%20web"
                     target="_blank"
                     className={`px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all hidden sm:block ${scrolled ? 'bg-stone-900 text-white hover:bg-stone-800' : 'bg-white text-stone-900 hover:bg-stone-100'}`}
                 >

@@ -16,8 +16,15 @@
 }
 
 @layer base {
+  html {
+    font-size: 14px;
+    /* Default was 16px, shrinking to 14px for a 85% feel */
+  }
+
   body {
-    @apply bg-transparent text-gray-900 font-sans overflow-x-hidden antialiased;
+    @apply bg-transparent text-stone-900 font-sans overflow-x-hidden antialiased;
+    zoom: 0.9;
+    /* Added slight zoom to complement the font change */
   }
 }
 

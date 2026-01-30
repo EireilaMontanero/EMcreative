@@ -9,14 +9,6 @@ const faqs = [
         a: "Depende de la complejidad, pero una web corporativa estándar suele estar lista en 2 a 3 semanas. Proyectos más grandes como E-commerce pueden tomar de 4 a 6 semanas."
     },
     {
-        q: "¿Tendré control total sobre mi sitio?",
-        a: "Absolutamente. Te entrego una plataforma autogestionable o el código fuente completo, según prefieras. Tú eres el dueño de tu activo digital."
-    },
-    {
-        q: "¿Ofreces mantenimiento después del lanzamiento?",
-        a: "Sí, ofrezco planes de soporte mensual para asegurar que tu web esté siempre actualizada, segura y volando a máxima velocidad."
-    },
-    {
         q: "¿Cómo es el proceso de pago?",
         a: "Soy flexible. Podemos concordar la forma de pago que mejor te funcione; cuento con múltiples opciones para facilitar el inicio de nuestro trabajo juntos."
     }
