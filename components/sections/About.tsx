@@ -2,12 +2,14 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { getAssetPath } from '@/lib/utils'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function About() {
+    const { t } = useLanguage()
     return (
         <section id="about" className="py-32 relative">
-            <div className="container mx-auto px-6 max-w-6xl">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="container mx-auto px-6 max-w-7xl">
+                <div className="grid lg:grid-cols-2 gap-16 items-center">
 
                     {/* Text Card - Glassmorphism */}
                     <motion.div
@@ -17,17 +19,17 @@ export default function About() {
                         className="bg-white/40 backdrop-blur-xl border border-white/60 p-10 md:p-14 rounded-[3rem] shadow-sm"
                     >
                         <h2 className="text-4xl md:text-5xl font-serif text-stone-900 mb-6 drop-shadow-sm">
-                            Mi historia.
+                            {t.about.title}
                         </h2>
                         <div className="text-stone-800 font-medium leading-relaxed space-y-6">
                             <p className="text-lg leading-relaxed">
-                                Hola, soy <span className="text-stone-950 font-bold">Eireila</span>, una chica que busca superarse a sí misma para lograr salir adelante. No solo busco que tu web se vea increíble, sino que realmente <span className="italic font-serif text-stone-600">transmita tu esencia</span>.
+                                {t.about.textFirst} {t.about.textSecond}
                             </p>
                             <p className="font-light italic text-stone-600 border-l-2 border-stone-200 pl-4 py-2">
-                                "La magia ocurre cuando dejamos de intentar ser perfectos y empezamos a ser reales."
+                                "{t.about.quote}"
                             </p>
                             <p className="font-light text-stone-700">
-                                Mezclo la precisión técnica con mi lado más creativo. Para mí, cada proyecto es una oportunidad de convertir tu visión en una experiencia digital única, cuidando cada detalle para que tu marca destaque como se merece.
+                                {t.about.description}
                             </p>
                         </div>
 

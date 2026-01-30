@@ -2,67 +2,88 @@
 import Navbar from '@/components/ui/Navbar'
 import Footer from '@/components/ui/Footer'
 import { motion } from 'framer-motion'
-import { Layout, Monitor, PenTool, Smartphone, Globe, Shield } from 'lucide-react'
+import { Layout, PenTool, Smartphone, Globe, CreditCard } from 'lucide-react'
 
 const detailedServices = [
     {
         title: "Diseño UI/UX Emocional",
-        desc: "No solo diseño pantallas, diseño experiencias que conectan con tus usuarios a nivel emocional.",
+        desc: "No solo diseño pantallas, diseño experiencias que conectan con tus usuarios a nivel emocional, usando una estética limpia y sofisticada.",
         icon: <Layout className="w-10 h-10" />
     },
     {
         title: "Desarrollo High-End",
-        desc: "Uso Next.js 15 y las últimas tecnologías para asegurar que tu web sea la más rápida del mercado.",
+        desc: "Uso Next.js 15 y las últimas tecnologías para asegurar que tu web sea la más rápida del mercado, optimizada para SEO y rendimiento.",
         icon: <Globe className="w-10 h-10" />
     },
     {
         title: "Branding con Propósito",
-        desc: "Tu logo y tus colores deben contar tu historia. Creemos juntos una identidad que perdure.",
+        desc: "Tu logo y tus colores deben contar tu historia. Creemos juntos una identidad visual que perdure y transmita profesionalismo.",
         icon: <PenTool className="w-10 h-10" />
     },
     {
         title: "Mobile First",
-        desc: "Tu web se verá impecable en cualquier dispositivo, garantizado.",
+        desc: "Tu web se verá impecable en cualquier dispositivo, garantizando una experiencia de usuario fluida desde el teléfono hasta la pantalla grande.",
         icon: <Smartphone className="w-10 h-10" />
     }
 ]
 
 export default function ServicesPage() {
     return (
-        <main className="w-full min-h-screen">
+        <main className="w-full min-h-screen bg-[#FAF9F6]">
             <Navbar />
 
-            <section className="pt-40 pb-20 px-6">
+            <section className="pt-40 pb-32 px-6">
                 <div className="container mx-auto max-w-6xl">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center mb-20"
                     >
-                        <h1 className="text-5xl md:text-7xl font-serif text-gray-900 mb-6">Mis Servicios</h1>
-                        <p className="text-gray-600 max-w-2xl mx-auto text-lg italic">
-                            Soluciones digitales personalizadas para marcas que no se conforman con lo normal.
+                        <h1 className="text-5xl md:text-7xl font-serif text-stone-900 mb-6 tracking-tighter">Mis Servicios</h1>
+                        <p className="text-stone-600 max-w-2xl mx-auto text-lg italic tracking-wide">
+                            Soluciones digitales personalizadas para marcas que buscan destacar con elegancia y propósito.
                         </p>
                     </motion.div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
+                    <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
                         {detailedServices.map((s, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                className="bg-white/40 backdrop-blur-xl border border-white/60 p-12 rounded-[2.5rem] shadow-lg group hover:bg-black hover:text-white transition-all duration-500"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: i * 0.1 }}
+                                className="bg-white/40 backdrop-blur-xl border border-stone-200 p-12 rounded-[3rem] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group"
                             >
-                                <div className="p-4 bg-white/50 rounded-2xl w-fit mb-8 group-hover:bg-white/20 transition-colors">
+                                <div className="p-5 bg-stone-100 rounded-2xl w-fit mb-8 group-hover:bg-stone-900 group-hover:text-white transition-all duration-500">
                                     {s.icon}
                                 </div>
-                                <h3 className="text-3xl font-serif mb-4">{s.title}</h3>
-                                <p className="text-gray-600 group-hover:text-gray-300 leading-relaxed text-lg">
+                                <h3 className="text-3xl font-serif text-stone-900 mb-4 tracking-tight">{s.title}</h3>
+                                <p className="text-stone-600 leading-relaxed text-lg font-light">
                                     {s.desc}
                                 </p>
                             </motion.div>
                         ))}
                     </div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="mt-32 p-16 bg-stone-900 rounded-[3rem] text-white text-center relative overflow-hidden"
+                    >
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                        <CreditCard className="mx-auto mb-8 w-12 h-12 text-stone-400" />
+                        <h2 className="text-4xl font-serif mb-6">Pagos Flexibles</h2>
+                        <p className="text-stone-300 max-w-xl mx-auto text-lg leading-relaxed mb-10">
+                            Me adapto a tu presupuesto. Podemos concordar la forma de pago que mejor te funcione; cuento con múltiples opciones para facilitar el inicio de nuestro trabajo juntos.
+                        </p>
+                        <a
+                            href="https://wa.me/584264255154"
+                            target="_blank"
+                            className="bg-white text-stone-900 px-10 py-4 rounded-2xl font-bold tracking-widest uppercase hover:bg-stone-200 transition-all active:scale-95"
+                        >
+                            Consultar Opciones
+                        </a>
+                    </motion.div>
                 </div>
             </section>
 

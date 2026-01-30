@@ -3,21 +3,23 @@ import { motion } from 'framer-motion'
 import { MessageCircle, Send, CheckCheck, Phone } from 'lucide-react'
 import Image from 'next/image'
 import { getAssetPath } from '@/lib/utils'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Contact() {
+    const { t, language } = useLanguage()
     return (
         <section id="contact" className="py-32 px-6 relative overflow-hidden">
             <div className="container mx-auto max-w-4xl">
 
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-4">¿Hablamos por WhatsApp?</h2>
-                    <p className="text-gray-600 max-w-md mx-auto italic font-medium">Respuesta inmediata y trato personalizado para tu proyecto.</p>
+                    <h2 className="text-4xl md:text-5xl font-serif text-stone-900 mb-4 tracking-tighter">{t.contact.title}</h2>
+                    <p className="text-stone-600 max-w-md mx-auto italic font-medium">{t.contact.subtitle}</p>
                 </div>
 
                 <motion.div
                     initial={{ y: 50, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1 }}
-                    className="max-w-md mx-auto bg-[#E5DDD5] rounded-[2.5rem] shadow-2xl overflow-hidden border border-black/5"
+                    className="max-w-md mx-auto bg-[#E5DDD5] rounded-[2.5rem] shadow-2xl overflow-hidden border border-stone-200"
                 >
                     {/* WhatsApp Header */}
                     <div className="bg-[#075E54] p-5 flex items-center gap-4 text-white">
@@ -33,7 +35,7 @@ export default function Contact() {
                             <h3 className="font-bold text-sm tracking-tight text-white">Eireila Montanero</h3>
                             <p className="text-[10px] opacity-90 flex items-center gap-1 font-medium">
                                 <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-                                en línea ahora
+                                {t.contact.chatStatus}
                             </p>
                         </div>
                         <div className="flex gap-4 opacity-80">
@@ -50,12 +52,12 @@ export default function Contact() {
                             initial={{ x: -20, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             transition={{ delay: 0.5 }}
-                            className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] relative border border-black/5"
+                            className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] relative border border-stone-200"
                         >
-                            <p className="text-sm text-gray-800 leading-relaxed">
-                                ¡Hola! 👋 Soy Eireila. Me encantaría saber más sobre tu idea. ¿Qué tienes en mente para tu web?
+                            <p className="text-sm text-stone-800 leading-relaxed">
+                                {t.contact.message1}
                             </p>
-                            <span className="text-[9px] text-gray-400 float-right mt-2 font-bold tracking-tighter">10:42 AM</span>
+                            <span className="text-[9px] text-stone-400 float-right mt-2 font-bold tracking-tighter">10:42 AM</span>
                         </motion.div>
 
                         {/* Received Message 2 */}
@@ -63,12 +65,12 @@ export default function Contact() {
                             initial={{ x: -20, opacity: 0 }}
                             whileInView={{ x: 0, opacity: 1 }}
                             transition={{ delay: 1.2 }}
-                            className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] border border-black/5"
+                            className="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm max-w-[85%] border border-stone-200"
                         >
-                            <p className="text-sm text-gray-800 font-bold italic">
-                                Juntos podemos hacer que tu marca brille online. ✨
+                            <p className="text-sm text-stone-800 font-bold italic">
+                                {t.contact.message2}
                             </p>
-                            <span className="text-[9px] text-gray-400 float-right mt-2 font-bold tracking-tighter">10:42 AM</span>
+                            <span className="text-[9px] text-stone-400 float-right mt-2 font-bold tracking-tighter">10:42 AM</span>
                         </motion.div>
 
                         {/* Typing CTA */}
@@ -84,15 +86,15 @@ export default function Contact() {
                                 className="block bg-[#25D366] text-white p-5 rounded-2xl text-center font-bold text-sm shadow-xl hover:bg-[#128C7E] active:scale-95 transition-all flex items-center justify-center gap-3 group"
                             >
                                 <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                ESCRIBIR POR WHATSAPP
+                                {t.contact.cta}
                             </a>
                         </motion.div>
                     </div>
 
                     {/* Bottom Bar Imitation */}
                     <div className="bg-[#F0F2F5] p-4 flex gap-3 items-center">
-                        <div className="flex-1 bg-white rounded-full px-5 py-3 text-xs text-gray-400 border border-black/5 shadow-inner">
-                            Escribe un mensaje...
+                        <div className="flex-1 bg-white rounded-full px-5 py-3 text-xs text-stone-400 border border-stone-200 shadow-inner">
+                            {language === 'es' ? 'Escribe un mensaje...' : 'Type a message...'}
                         </div>
                         <div className="w-10 h-10 bg-[#128C7E] rounded-full flex items-center justify-center text-white shadow-md">
                             <Send size={16} />

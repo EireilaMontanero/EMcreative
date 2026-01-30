@@ -3,6 +3,7 @@ import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import { getAssetPath } from "@/lib/utils";
+import { LanguageProvider } from "@/lib/LanguageContext";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -25,26 +26,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body
-        className={`${playfair.variable} ${montserrat.variable} antialiased bg-black text-gray-900 font-sans`}
-      >
-        {/* Global Blurred Background (User's Banner) */}
-        <div className="fixed inset-0 min-h-screen w-full -z-50 overflow-hidden">
-          <Image
-            src={getAssetPath('/assets/banner.png')}
-            alt="Background Palette"
-            fill
-            sizes="100vw"
-            className="object-cover blur-[100px] opacity-40 scale-125 transition-all duration-1000" // More wash, more scale for movement
-            priority
-          />
-          {/* Premium Noise / Grain Texture Overlay */}
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.15] brightness-50 contrast-150 mix-blend-overlay pointer-events-none"></div>
-          <div className="absolute inset-0 bg-white/10 mix-blend-soft-light pointer-events-none"></div>
-        </div>
+    <html lang="es">
+      <body className={`${playfair.variable} ${montserrat.variable} antialiased text-stone-900 bg-[#FAF9F6]`}>
+        <LanguageProvider>
+          {/* Global Blurred Background (User's Banner) */}
+          <div className="fixed inset-0 min-h-screen w-full -z-50 overflow-hidden">
+            <Image
+              src={getAssetPath('/assets/banner.png')}
+              alt="Background Palette"
+              fill
+              sizes="100vw"
+              className="object-cover blur-[100px] opacity-40 scale-125 transition-all duration-1000"
+              priority
+            />
+            {/* Premium Noise / Grain Texture Overlay */}
+            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.15] brightness-50 contrast-150 mix-blend-overlay pointer-events-none"></div>
+            <div className="absolute inset-0 bg-white/10 mix-blend-soft-light pointer-events-none"></div>
+          </div>
 
-        {children}
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

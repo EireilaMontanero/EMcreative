@@ -1,3 +1,4 @@
+'use client'
 import Navbar from '@/components/ui/Navbar'
 import About from '@/components/sections/About'
 import Services from '@/components/sections/Services'
@@ -10,8 +11,10 @@ import FAQ from '@/components/sections/FAQ'
 import Footer from '@/components/ui/Footer'
 import Image from 'next/image'
 import { getAssetPath } from '@/lib/utils'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Home() {
+  const { t } = useLanguage()
   return (
     <main className="w-full min-h-screen">
       <Navbar />
@@ -49,12 +52,12 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-9xl font-serif font-bold text-white tracking-tighter drop-shadow-2xl mb-6 scale-90 md:scale-100">
-            EIREILA
+          <h1 className="text-6xl md:text-9xl font-serif font-bold text-white tracking-tighter drop-shadow-2xl mb-6 scale-90 md:scale-100 uppercase">
+            {t.hero.title}
           </h1>
 
-          <p className="text-lg md:text-2xl text-white/95 font-medium max-w-xl mx-auto tracking-wide drop-shadow-md bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-white/10">
-            Diseño Web Premium & Estrategia Digital
+          <p className="text-lg md:text-2xl text-white/95 font-medium max-w-xl mx-auto tracking-wide drop-shadow-md bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-white/10 uppercase">
+            {t.hero.subtitle}
           </p>
         </div>
       </section>
