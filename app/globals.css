@@ -9,8 +9,10 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
+  --background: #FAF9F6;
+  /* Off-white / Cream */
+  --foreground: #2D2926;
+  /* Deep Stone / Warm Black */
 }
 
 @layer base {

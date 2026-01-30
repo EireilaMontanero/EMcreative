@@ -61,7 +61,6 @@ export default function Home() {
 
       {/* Corporate Content Flow */}
       <SkillsMarquee />
-      <Statistics />
 
       <div className="relative">
         <About />
@@ -69,7 +68,6 @@ export default function Home() {
       </div>
 
       <Services />
-      <Testimonials />
       <FAQ />
 
       <div id="contact">

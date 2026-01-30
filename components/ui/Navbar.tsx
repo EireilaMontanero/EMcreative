@@ -45,9 +45,9 @@ export default function Navbar() {
                     />
                 </Link>
 
-                <div className="hidden md:flex gap-6">
+                <div className="hidden md:flex gap-6 items-center">
                     {[
-                        { name: 'Inicio', href: getAssetPath('/') + '#home' },
+                        { name: 'Inicio', href: getAssetPath('/') },
                         { name: 'Sobre Mí', href: getAssetPath('/') + '#about' },
                         { name: 'Servicios', href: getAssetPath('/servicios') },
                         { name: 'Portafolio', href: getAssetPath('/portfolio') },
@@ -56,11 +56,18 @@ export default function Navbar() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className={`text-xs font-bold tracking-[0.2em] uppercase hover:text-white transition-colors ${scrolled ? 'text-gray-800' : 'text-gray-200'}`}
+                            className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-stone-800 hover:text-stone-400' : 'text-stone-200 hover:text-white'}`}
                         >
                             {item.name}
                         </Link>
                     ))}
+
+                    {/* Language Toggle Mockup */}
+                    <div className="flex gap-2 ml-4 border-l border-white/20 pl-4 h-4 items-center">
+                        <button className="text-[9px] font-bold text-stone-400 hover:text-white transition-colors">EN</button>
+                        <span className="text-stone-600 text-[10px]">/</span>
+                        <button className="text-[9px] font-bold text-white underline underline-offset-4">ES</button>
+                    </div>
                 </div>
 
                 {/* Social Icons Mini */}

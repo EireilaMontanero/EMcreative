@@ -14,23 +14,26 @@ export default function About() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="bg-white/70 backdrop-blur-xl border border-white/60 p-10 md:p-14 rounded-[2rem] shadow-xl"
+                        className="bg-white/40 backdrop-blur-xl border border-white/60 p-10 md:p-14 rounded-[3rem] shadow-sm"
                     >
-                        <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-6 drop-shadow-sm">
-                            Un poco sobre mí.
+                        <h2 className="text-4xl md:text-5xl font-serif text-stone-900 mb-6 drop-shadow-sm">
+                            Mi historia.
                         </h2>
-                        <div className="text-gray-800 font-medium leading-relaxed space-y-6">
-                            <p className="text-lg">
-                                Hola, soy <span className="text-black font-bold">Eireila</span>. Mi enfoque es sencillo: no solo busco que tu web se vea increíble, sino que realmente <span className="italic font-serif text-black">transmita</span> lo que eres.
+                        <div className="text-stone-800 font-medium leading-relaxed space-y-6">
+                            <p className="text-lg leading-relaxed">
+                                Hola, soy <span className="text-stone-950 font-bold">Eireila</span>, una chica que busca superarse a sí misma para lograr salir adelante. No solo busco que tu web se vea increíble, sino que realmente <span className="italic font-serif text-stone-600">transmita tu esencia</span>.
                             </p>
-                            <p className="font-light text-gray-700">
+                            <p className="font-light italic text-stone-600 border-l-2 border-stone-200 pl-4 py-2">
+                                "La magia ocurre cuando dejamos de intentar ser perfectos y empezamos a ser reales."
+                            </p>
+                            <p className="font-light text-stone-700">
                                 Mezclo la precisión técnica con mi lado más creativo. Para mí, cada proyecto es una oportunidad de convertir tu visión en una experiencia digital única, cuidando cada detalle para que tu marca destaque como se merece.
                             </p>
                         </div>
 
                         <div className="mt-8 flex gap-3 flex-wrap">
-                            {['Diseño Web', 'Estrategia', 'Branding'].map(tag => (
-                                <span key={tag} className="px-3 py-1 bg-white/60 border border-black/5 rounded-full text-xs font-bold tracking-widest uppercase text-gray-900 hover:bg-white hover:shadow-md transition-all">
+                            {['Estrategia', 'Diseño', 'Alma'].map(tag => (
+                                <span key={tag} className="px-4 py-1.5 bg-stone-100 text-stone-500 rounded-full text-[10px] font-bold tracking-widest uppercase border border-stone-200/50">
                                     {tag}
                                 </span>
                             ))}

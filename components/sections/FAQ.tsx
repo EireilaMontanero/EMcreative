@@ -18,7 +18,7 @@ const faqs = [
     },
     {
         q: "¿Cómo es el proceso de pago?",
-        a: "Generalmente trabajamos con un anticipo del 50% para iniciar y el 50% restante al completar el proyecto y recibir tu total aprobación."
+        a: "Soy flexible. Podemos concordar la forma de pago que mejor te funcione; cuento con múltiples opciones para facilitar el inicio de nuestro trabajo juntos."
     }
 ]
 
