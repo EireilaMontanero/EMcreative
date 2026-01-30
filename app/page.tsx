@@ -4,6 +4,10 @@ import Services from '@/components/sections/Services'
 import Contact from '@/components/sections/Contact'
 import SkillsMarquee from '@/components/sections/SkillsMarquee'
 import Process from '@/components/sections/Process'
+import Testimonials from '@/components/sections/Testimonials'
+import Statistics from '@/components/sections/Statistics'
+import FAQ from '@/components/sections/FAQ'
+import Footer from '@/components/ui/Footer'
 import Image from 'next/image'
 import { getAssetPath } from '@/lib/utils'
 
@@ -31,8 +35,8 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-20 flex flex-col items-center max-w-4xl text-center">
-          {/* Logo Container - Glass Effect */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-full mb-10 shadow-2xl animate-fade-in-up">
+          {/* Logo Container - Glass Effect - Updated Animation */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-full mb-10 shadow-2xl animate-fade-in-up hover:scale-105 transition-transform duration-700">
             <div className="relative flex items-center justify-center">
               <Image
                 src={getAssetPath('/assets/logo.png')}
@@ -45,28 +49,34 @@ export default function Home() {
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-8xl font-serif font-bold text-white tracking-tight drop-shadow-xl mb-6">
+          <h1 className="text-6xl md:text-9xl font-serif font-bold text-white tracking-tighter drop-shadow-2xl mb-6 scale-90 md:scale-100">
             EIREILA
           </h1>
 
-          <p className="text-lg md:text-2xl text-white/90 font-medium max-w-xl mx-auto tracking-wide drop-shadow-md bg-black/30 backdrop-blur-sm p-4 rounded-xl">
-            Diseño Web & Experiencias Digitales
+          <p className="text-lg md:text-2xl text-white/95 font-medium max-w-xl mx-auto tracking-wide drop-shadow-md bg-black/40 backdrop-blur-md p-6 rounded-2xl border border-white/10">
+            Diseño Web Premium & Estrategia Digital
           </p>
         </div>
       </section>
 
-      {/* New Professional Sections */}
+      {/* Corporate Content Flow */}
       <SkillsMarquee />
-      <About />
-      <Process />
+      <Statistics />
 
-      {/* Existing Sections */}
+      <div className="relative">
+        <About />
+        <Process />
+      </div>
+
       <Services />
-      <Contact />
+      <Testimonials />
+      <FAQ />
 
-      <footer className="py-8 bg-white/30 backdrop-blur-md text-black font-bold text-center text-xs tracking-widest uppercase">
-        <p>&copy; {new Date().getFullYear()} Eireila Montanero</p>
-      </footer>
+      <div id="contact">
+        <Contact />
+      </div>
+
+      <Footer />
     </main>
   )
 }
