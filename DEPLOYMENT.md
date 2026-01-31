@@ -7,7 +7,7 @@ Vercel es la plataforma creada por los mismos desarrolladores de Next.js. Es la 
 
 1. Entra en [Vercel.com](https://vercel.com/) e inicia sesión con tu cuenta de **GitHub**.
 2. Dale al botón **"Add New"** > **"Project"**.
-3. Busca tu repositorio `EMcreative` y dale a **"Import"**.
+3. Busca tu repositorio `eireilamontanero.github.io` y dale a **"Import"**.
 4. En la configuración (Project Settings), no hace falta cambiar nada. Simplemente dale a **"Deploy"**.
 5. ¡Listo! En menos de un minuto tendrás una URL como `emcreative.vercel.app`.
 
@@ -18,8 +18,8 @@ Si prefieres Netlify (donde tienes otros proyectos de Yarolde), también funcion
 
 1. Entra en [Netlify.com](https://www.netlify.com/) e inicia sesión con **GitHub**.
 2. Selecciona **"Add new site"** > **"Import an existing project"**.
-3. Elige **GitHub** y selecciona el repositorio `EMcreative`.
-4. Netlify detectará automáticamente que es un proyecto de Next.js. Dale a **"Deploy EMcreative"**.
+3. Elige **GitHub** y selecciona el repositorio `eireilamontanero.github.io`.
+4. Netlify detectará automáticamente que es un proyecto de Next.js. Dale a **"Deploy eireilamontanero.github.io"**.
 
 ---
 

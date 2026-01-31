@@ -9,7 +9,7 @@ Para que tu web aparezca en los resultados de Google con tu cuenta `zenzotobi1@g
 ## 2. Añadir tu Propiedad
 1. Haz clic en "Añadir propiedad".
 2. Selecciona el tipo **"Prefijo de la URL"**.
-3. Pega tu dirección: `https://eireilamontanero.github.io/EMcreative/`
+3. Pega tu dirección: `https://eireilamontanero.github.io/`
 
 ## 3. Verificar Propiedad (Método Etiqueta HTML)
 1. Busca la opción **"Etiqueta HTML"**.
