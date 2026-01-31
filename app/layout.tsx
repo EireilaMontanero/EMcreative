@@ -19,13 +19,22 @@ export const metadata: Metadata = {
   title: "Eireila | Desarrollo Web & Diseño",
   description: "Portafolio profesional de Eireila Montanero.",
   keywords: [
-    "Eireila Montanero", "Eireila", "Montanero",
-    "Eirela Montanero", "Eirela", "Ireila", "Ireili",
-    "Eyreila", "Aireila", "Reila", "Eireli", "Eirely",
-    "Eirelia Montanera", "Eirella", "Eirela Montanero",
-    "Eireila Diseño Web", "Eireila Brand", "Eireila Portfolio",
+    // Official & Brand
+    "Eireila Montanero", "Eireila", "Montanero", "Eireila Brand", "EMcreative", "Eireila Portfolio",
+    // Common Spanish Misspellings
+    "Eirela Montanero", "Eirela", "Ireila", "Ireila Montanero", "Eirelia", "Eiralia", "Eirella",
+    "Eirelia Montanero", "Eirela Montanero", "Eirella Montanero", "Montanero Eireila",
+    // Phonetic Variations (International)
+    "Ireili", "Ireili Montanero", "Eyreila", "Eyreila Montanero", "Aireila", "Aireila Montanero",
+    "Ayreila", "Ayreila Montanero", "Ereila", "Ereilla", "Ereila Montanero", "Reila", "Reila Montanero",
+    "Eirely", "Eirelly", "Eirely Montanero", "Eireli", "Eirely Brand",
+    // Typos & Slips
+    "Eirila", "Eirelia", "Eireial", "Eirella", "Eireliha", "Eirieila", "Eriela", "Erielila",
+    // Language specific phonetics
+    "Eyreylla", "Airiela", "Ayriela", "Eiréila", "Eireila Montanera",
+    // Niche & Industry
     "Diseño Web Beige", "Diseño Web Coquette", "Diseño Web Minimalista",
-    "Web Designer Venezuela", "Premium Web Design"
+    "Web Designer Venezuela", "Premium Web Design", "Estética Beige", "Elegant Web Portfolio"
   ],
   verification: {
     google: [
