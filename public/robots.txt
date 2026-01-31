@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://eireilamontanero.github.io/sitemap.xml
