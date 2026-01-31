@@ -18,6 +18,12 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Eireila | Desarrollo Web & Diseño",
   description: "Portafolio profesional de Eireila Montanero.",
+  keywords: [
+    "Eireila Montanero", "Eirela Montanero", "Eyreila Montanero", "Aireila Montanero",
+    "Eireila Diseño Web", "Eireila Brand", "Eireila Portfolio", "Eireila EMcreative",
+    "Diseño Web Beige", "Diseño Web Coquette", "Diseño Web Minimalista",
+    "Web Designer Venezuela", "Next.js Developer", "Premium Web Design"
+  ],
   verification: {
     google: [
       "6Pp8A-WntSt0nsJTaxLvT-p_uGfGliFABMGJprUDufI",
