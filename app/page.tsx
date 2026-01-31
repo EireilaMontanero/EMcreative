@@ -18,7 +18,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section - Video + Glass Logo */}
-      <section id="home" className="relative min-h-[60vh] w-full overflow-hidden flex flex-col items-center justify-center p-4 pt-24 mb-12">
+      <section id="home" className="relative min-h-[85vh] w-full overflow-hidden flex flex-col items-center justify-center p-4 pt-24 mb-12">
 
         {/* Helper Gradient Overlay */}
         <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none"></div>
