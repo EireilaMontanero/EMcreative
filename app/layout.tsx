@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Eireila | Desarrollo Web & Diseño",
   description: "Portafolio profesional de Eireila Montanero.",
   verification: {
-    google: "6Pp8A-WntSt0nsJTaxLvT-p_uGfGliFABMGJprUDufI",
+    google: "-X5FIasDcJ2FF2rACPwN_cvEelczJG8nJOcSyZDVnBc",
   }
 };
 
