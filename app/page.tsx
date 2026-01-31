@@ -5,8 +5,6 @@ import Services from '@/components/sections/Services'
 import Contact from '@/components/sections/Contact'
 import SkillsMarquee from '@/components/sections/SkillsMarquee'
 import Process from '@/components/sections/Process'
-import Testimonials from '@/components/sections/Testimonials'
-import Statistics from '@/components/sections/Statistics'
 import FAQ from '@/components/sections/FAQ'
 import Footer from '@/components/ui/Footer'
 import Image from 'next/image'
@@ -20,7 +18,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section - Video + Glass Logo */}
-      <section id="home" className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center p-4">
+      <section id="home" className="relative min-h-[60vh] w-full overflow-hidden flex flex-col items-center justify-center p-4 pt-24 mb-12">
 
         {/* Helper Gradient Overlay */}
         <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none"></div>
@@ -38,25 +36,25 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-20 flex flex-col items-center max-w-4xl text-center">
-          {/* Logo Container - Glass Effect - Updated Animation */}
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 rounded-full mb-10 shadow-2xl animate-fade-in-up hover:scale-105 transition-transform duration-700">
-            <div className="relative flex items-center justify-center">
+          {/* Logo Container - Glass Effect */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-full mb-6 shadow-2xl animate-fade-in-up hover:scale-105 transition-transform duration-700">
+            <div className="relative h-20 w-20 flex items-center justify-center">
               <Image
                 src={getAssetPath('/assets/logo.png')}
                 alt="Eireila Logo"
-                width={200}
-                height={200}
+                width={100}
+                height={100}
                 className="object-contain"
                 priority
               />
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white tracking-tighter drop-shadow-2xl mb-4 scale-95 md:scale-100 uppercase">
+          <h1 className="text-3xl md:text-5xl font-serif font-bold text-white tracking-tighter drop-shadow-2xl mb-3 scale-95 md:scale-100 uppercase">
             {t.hero.title}
           </h1>
 
-          <p className="text-sm md:text-lg text-white/95 font-medium max-w-lg mx-auto tracking-wide drop-shadow-md bg-black/40 backdrop-blur-md p-4 rounded-xl border border-white/10 uppercase">
+          <p className="text-xs md:text-sm text-white/95 font-medium max-w-sm mx-auto tracking-wide drop-shadow-md bg-black/40 backdrop-blur-md p-3 rounded-lg border border-white/10 uppercase">
             {t.hero.subtitle}
           </p>
         </div>
