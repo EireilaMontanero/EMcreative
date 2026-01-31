@@ -23,8 +23,8 @@
 
   body {
     @apply bg-transparent text-stone-900 font-sans overflow-x-hidden antialiased;
-    zoom: 0.9;
-    /* Added slight zoom to complement the font change */
+    zoom: 0.7;
+    /* User preferred 70% zoom for a more compact experience */
   }
 }
 
