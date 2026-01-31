@@ -3,5 +3,5 @@ export const getAssetPath = (path: string) => {
     // Remove leading slash if present to avoid double slashes if we were concatenating,
     // but here we want to prefix.
     const cleanPath = path.startsWith('/') ? path : `/${path}`;
-    return isProd ? `/EMcreative${cleanPath}` : cleanPath;
+    return cleanPath;
 };

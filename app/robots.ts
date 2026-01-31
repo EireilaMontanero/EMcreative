@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://eireilamontanero.github.io/EMcreative/sitemap.xml',
+        sitemap: 'https://eireilamontanero.github.io/sitemap.xml',
     }
 }
