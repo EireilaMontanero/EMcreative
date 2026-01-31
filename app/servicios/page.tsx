@@ -3,31 +3,34 @@ import Navbar from '@/components/ui/Navbar'
 import Footer from '@/components/ui/Footer'
 import { motion } from 'framer-motion'
 import { Layout, PenTool, Smartphone, Globe, CreditCard } from 'lucide-react'
-
-const detailedServices = [
-    {
-        title: "Diseño UI/UX Emocional",
-        desc: "No solo diseño pantallas, diseño experiencias que conectan con tus usuarios a nivel emocional, usando una estética limpia y sofisticada.",
-        icon: <Layout className="w-10 h-10" />
-    },
-    {
-        title: "Desarrollo High-End",
-        desc: "Uso Next.js 15 y las últimas tecnologías para asegurar que tu web sea la más rápida del mercado, optimizada para SEO y rendimiento.",
-        icon: <Globe className="w-10 h-10" />
-    },
-    {
-        title: "Branding con Propósito",
-        desc: "Tu logo y tus colores deben contar tu historia. Creemos juntos una identidad visual que perdure y transmita profesionalismo.",
-        icon: <PenTool className="w-10 h-10" />
-    },
-    {
-        title: "Mobile First",
-        desc: "Tu web se verá impecable en cualquier dispositivo, garantizando una experiencia de usuario fluida desde el teléfono hasta la pantalla grande.",
-        icon: <Smartphone className="w-10 h-10" />
-    }
-]
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function ServicesPage() {
+    const { t } = useLanguage()
+
+    const detailedServices = [
+        {
+            title: t.services.ui.title,
+            desc: t.services.ui.desc,
+            icon: <Layout className="w-10 h-10" />
+        },
+        {
+            title: t.services.dev.title,
+            desc: t.services.dev.desc,
+            icon: <Globe className="w-10 h-10" />
+        },
+        {
+            title: t.services.branding.title,
+            desc: t.services.branding.desc,
+            icon: <PenTool className="w-10 h-10" />
+        },
+        {
+            title: t.services.mobile.title,
+            desc: t.services.mobile.desc,
+            icon: <Smartphone className="w-10 h-10" />
+        }
+    ]
+
     return (
         <main className="w-full min-h-screen bg-[#FAF9F6]">
             <Navbar />
@@ -39,9 +42,9 @@ export default function ServicesPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-center mb-20"
                     >
-                        <h1 className="text-5xl md:text-7xl font-serif text-stone-900 mb-6 tracking-tighter">Mis Servicios</h1>
+                        <h1 className="text-5xl md:text-7xl font-serif text-stone-900 mb-6 tracking-tighter">{t.services.title}</h1>
                         <p className="text-stone-600 max-w-2xl mx-auto text-lg italic tracking-wide">
-                            Soluciones digitales personalizadas para marcas que buscan destacar con elegancia y propósito.
+                            {t.services.subtitle}
                         </p>
                     </motion.div>
 
@@ -72,16 +75,16 @@ export default function ServicesPage() {
                     >
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
                         <CreditCard className="mx-auto mb-8 w-12 h-12 text-stone-400" />
-                        <h2 className="text-4xl font-serif mb-6">Pagos Flexibles</h2>
+                        <h2 className="text-4xl font-serif mb-6">{t.services.paymentsTitle}</h2>
                         <p className="text-stone-300 max-w-xl mx-auto text-lg leading-relaxed mb-10">
-                            Me adapto a tu presupuesto. Podemos concordar la forma de pago que mejor te funcione; cuento con múltiples opciones para facilitar el inicio de nuestro trabajo juntos.
+                            {t.services.paymentsDesc}
                         </p>
                         <a
                             href="https://wa.me/584264255154?text=Hola,%20vengo%20de%20tu%20pagina%20web"
                             target="_blank"
                             className="bg-white text-stone-900 px-10 py-4 rounded-2xl font-bold tracking-widest uppercase hover:bg-stone-200 transition-all active:scale-95"
                         >
-                            Consultar Opciones
+                            {t.services.paymentsCta}
                         </a>
                     </motion.div>
                 </div>

@@ -2,19 +2,22 @@
 import { motion } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
 import { useState } from 'react'
-
-const faqs = [
-    {
-        q: "¿Cuánto tiempo toma desarrollar una web?",
-        a: "Depende de la complejidad, pero una web corporativa estándar suele estar lista en 2 a 3 semanas. Proyectos más grandes como E-commerce pueden tomar de 4 a 6 semanas."
-    },
-    {
-        q: "¿Cómo es el proceso de pago?",
-        a: "Soy flexible. Podemos concordar la forma de pago que mejor te funcione; cuento con múltiples opciones para facilitar el inicio de nuestro trabajo juntos."
-    }
-]
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function FAQ() {
+    const { t } = useLanguage()
+
+    const faqs = [
+        {
+            q: t.faq.q1.q,
+            a: t.faq.q1.a
+        },
+        {
+            q: t.faq.q2.q,
+            a: t.faq.q2.a
+        }
+    ]
+
     const [openIndex, setOpenIndex] = useState<number | null>(null)
 
     return (
@@ -22,8 +25,8 @@ export default function FAQ() {
             <div className="container mx-auto max-w-3xl">
 
                 <div className="text-center mb-16">
-                    <span className="text-xs font-bold tracking-[0.3em] uppercase text-gray-400 mb-4 block">Preguntas Comunes</span>
-                    <h2 className="text-4xl md:text-5xl font-serif text-gray-900">Resolviendo <span className="italic">tus dudas</span></h2>
+                    <span className="text-xs font-bold tracking-[0.3em] uppercase text-stone-400 mb-4 block">{t.faq.tag}</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-stone-900">{t.faq.title}<span className="italic">{t.faq.titleItalic}</span></h2>
                 </div>
 
                 <div className="space-y-4">
@@ -33,7 +36,7 @@ export default function FAQ() {
                                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
                                 className="w-full flex justify-between items-center py-4 text-left group"
                             >
-                                <span className="text-lg font-bold text-gray-800 group-hover:text-black transition-colors">{faq.q}</span>
+                                <span className="text-lg font-bold text-stone-800 group-hover:text-black transition-colors">{faq.q}</span>
                                 {openIndex === i ? <Minus size={20} /> : <Plus size={20} />}
                             </button>
                             {openIndex === i && (
@@ -42,7 +45,7 @@ export default function FAQ() {
                                     animate={{ height: 'auto', opacity: 1 }}
                                     className="overflow-hidden"
                                 >
-                                    <p className="text-gray-600 leading-relaxed pb-4 text-sm">
+                                    <p className="text-stone-600 leading-relaxed pb-4 text-sm">
                                         {faq.a}
                                     </p>
                                 </motion.div>
