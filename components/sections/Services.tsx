@@ -22,31 +22,48 @@ const services = [
 
 export default function Services() {
     return (
-        <section id="services" className="py-20">
-            <div className="container mx-auto px-6 max-w-6xl">
+        <section id="services" className="py-32 bg-stone-900 overflow-hidden relative">
+            {/* Background Accent */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] -mr-64 -mt-64"></div>
+
+            <div className="container mx-auto px-6 max-w-7xl relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    className="text-center mb-16"
+                    className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8"
                 >
-                    <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-4 drop-shadow-sm">Servicios</h2>
-                    <div className="h-1 w-20 bg-black mx-auto opacity-20 rounded-full"></div>
+                    <div className="max-w-2xl">
+                        <span className="text-[10px] font-black tracking-[0.5em] text-stone-500 uppercase mb-4 block">Core Capabilities</span>
+                        <h2 className="text-4xl md:text-7xl font-serif text-white tracking-tighter leading-tight">
+                            Soluciones de <span className="italic text-stone-400">Ingeniería</span> Digital
+                        </h2>
+                    </div>
+                    <div className="pb-2">
+                        <div className="h-[1px] w-24 bg-stone-700"></div>
+                    </div>
                 </motion.div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-6">
                     {services.map((s, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: i * 0.1 }}
-                            className="bg-white/40 backdrop-blur-lg border border-white/50 p-10 rounded-3xl hover:bg-white/60 transition-colors duration-500 shadow-lg group cursor-default"
+                            className="bg-white/5 backdrop-blur-3xl border border-white/10 p-12 rounded-[2.5rem] hover:bg-white/10 transition-all duration-700 group cursor-default"
                         >
-                            <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-black/5 group-hover:scale-110 transition-transform">
-                                {s.icon}
+                            <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-8 border border-white/10 group-hover:rotate-12 transition-transform">
+                                <span className="text-white opacity-80 group-hover:opacity-100">{s.icon}</span>
                             </div>
-                            <h3 className="text-2xl font-serif text-gray-900 mb-3">{s.title}</h3>
-                            <p className="text-gray-700 leading-relaxed text-sm font-medium">{s.description}</p>
+                            <h3 className="text-2xl font-serif text-white mb-4 tracking-tight">{s.title}</h3>
+                            <p className="text-stone-400 leading-relaxed text-sm font-light">
+                                {s.description}
+                            </p>
+
+                            <div className="mt-8 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <div className="w-1.5 h-1.5 bg-stone-500 rounded-full animate-pulse"></div>
+                                <span className="text-[10px] font-bold text-stone-500 uppercase tracking-widest">Active Module</span>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

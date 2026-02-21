@@ -24,30 +24,38 @@ export default function Navbar() {
 
     return (
         <motion.nav
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8 }}
-            className={`fixed top-6 left-0 right-0 z-50 flex justify-center transition-all duration-300 px-4`}
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed top-8 left-0 right-0 z-50 flex justify-center px-4"
         >
             <div className={`
-        flex items-center gap-6 px-6 md:gap-8 md:px-8 py-3 rounded-full 
-        ${scrolled ? 'bg-white/40 backdrop-blur-xl border border-stone-200/50 shadow-sm' : 'bg-black/20 backdrop-blur-md border border-white/10'}
-        transition-all duration-500
-      `}>
+                flex items-center gap-4 md:gap-8 px-4 py-2 rounded-2xl 
+                ${scrolled
+                    ? 'bg-white/70 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.05)]'
+                    : 'bg-black/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)]'}
+                transition-all duration-700 ease-in-out group
+            `}>
 
-                {/* Logo Icon */}
-                <Link href={getAssetPath('/')} className="relative block h-10 w-10 md:h-12 md:w-12 overflow-hidden rounded-full border border-stone-200/50 shadow-sm hover:scale-110 transition-transform">
-                    <Image
-                        src={getAssetPath('/assets/logo.png')}
-                        alt="Logo"
-                        width={48}
-                        height={48}
-                        className="object-cover"
-                        priority
-                    />
+                {/* Logo Section */}
+                <Link href={getAssetPath('/')} className="relative flex items-center gap-3 pr-4 border-r border-white/10">
+                    <div className="h-8 w-8 rounded-lg overflow-hidden border border-white/20 shadow-inner">
+                        <Image
+                            src={getAssetPath('/assets/logo.png')}
+                            alt="Logo"
+                            width={32}
+                            height={32}
+                            className="object-contain"
+                            priority
+                        />
+                    </div>
+                    <span className={`text-[10px] font-black tracking-[0.3em] uppercase ${scrolled ? 'text-stone-900' : 'text-white'}`}>
+                        Eireila
+                    </span>
                 </Link>
 
-                <div className="hidden md:flex gap-6 items-center">
+                {/* Navigation Links */}
+                <div className="hidden lg:flex gap-8 items-center">
                     {[
                         { name: t.nav.home, href: getAssetPath('/') },
                         { name: t.nav.about, href: getAssetPath('/') + '#about' },
@@ -58,46 +66,57 @@ export default function Navbar() {
                         <Link
                             key={item.name}
                             href={item.href}
-                            className={`text-[10px] font-bold tracking-[0.2em] uppercase transition-colors ${scrolled ? 'text-stone-800 hover:text-stone-500' : 'text-stone-200 hover:text-white'}`}
+                            className={`text-[9px] font-bold tracking-[0.25em] uppercase transition-all hover:tracking-[0.4em] ${scrolled ? 'text-stone-600 hover:text-black' : 'text-stone-300 hover:text-white'}`}
                         >
                             {item.name}
                         </Link>
                     ))}
+                </div>
 
-                    {/* Language Toggle */}
-                    <div className="flex gap-2 ml-4 border-l border-white/20 pl-4 h-4 items-center">
-                        <button
-                            onClick={() => setLanguage('en')}
-                            className={`text-[9px] font-bold transition-all ${language === 'en' ? (scrolled ? 'text-stone-900 underline underline-offset-4' : 'text-white underline underline-offset-4') : 'text-stone-400 hover:text-stone-200'}`}
-                        >
-                            EN
-                        </button>
-                        <span className="text-stone-600 text-[10px]">/</span>
-                        <button
-                            onClick={() => setLanguage('es')}
-                            className={`text-[9px] font-bold transition-all ${language === 'es' ? (scrolled ? 'text-stone-900 underline underline-offset-4' : 'text-white underline underline-offset-4') : 'text-stone-400 hover:text-stone-200'}`}
-                        >
-                            ES
-                        </button>
+                {/* Utility Actions */}
+                <div className="flex items-center gap-4">
+                    {/* Language Switcher - Compact */}
+                    <div className="flex bg-black/5 rounded-lg p-1">
+                        {['en', 'es'].map((lang) => (
+                            <button
+                                key={lang}
+                                onClick={() => setLanguage(lang as 'en' | 'es')}
+                                className={`px-2 py-0.5 text-[8px] font-black rounded-md transition-all ${language === lang ? (scrolled ? 'bg-stone-900 text-white' : 'bg-white text-stone-900') : 'text-stone-400 hover:text-stone-200'}`}
+                            >
+                                {lang.toUpperCase()}
+                            </button>
+                        ))}
                     </div>
-                </div>
 
-                {/* Social Icons Mini */}
-                <div className="flex gap-4 border-l border-white/20 pl-6 ml-2">
-                    {socialLinks.map((social, i) => (
-                        <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" className={`hover:scale-110 transition-transform ${scrolled ? 'text-stone-800' : 'text-white'}`}>
-                            {social.icon}
-                        </a>
-                    ))}
-                </div>
+                    {/* Socials - Glassy */}
+                    <div className="hidden sm:flex gap-2">
+                        {socialLinks.map((social, i) => (
+                            <a
+                                key={i}
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`p-1.5 rounded-lg transition-all ${scrolled ? 'hover:bg-stone-100 text-stone-700' : 'hover:bg-white/10 text-white'}`}
+                            >
+                                {social.icon}
+                            </a>
+                        ))}
+                    </div>
 
-                <Link
-                    href="https://wa.me/584264255154?text=Hola,%20vengo%20de%20tu%20pagina%20web"
-                    target="_blank"
-                    className={`px-4 py-1.5 text-xs font-bold uppercase tracking-wider rounded-full transition-all hidden sm:block ${scrolled ? 'bg-stone-900 text-white hover:bg-stone-800' : 'bg-white text-stone-900 hover:bg-stone-100'}`}
-                >
-                    WhatsApp
-                </Link>
+                    {/* CTA Button - App Style */}
+                    <Link
+                        href="https://wa.me/584264255154?text=Hola,%20vengo%20de%20tu%20pagina%20web"
+                        target="_blank"
+                        className={`
+                            px-5 py-2 text-[9px] font-black uppercase tracking-widest rounded-xl transition-all
+                            ${scrolled
+                                ? 'bg-stone-900 text-white hover:bg-black shadow-lg shadow-black/10'
+                                : 'bg-white text-stone-900 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]'}
+                        `}
+                    >
+                        Acceso Directo
+                    </Link>
+                </div>
             </div>
         </motion.nav>
     )
